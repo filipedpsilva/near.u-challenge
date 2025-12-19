@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { getShowsByQuery } from "../server/functions";
-import { ScoredShow } from "../server/types";
-import { getPremiereAndEndDates } from "../utils/utils";
+import { getShowsByQuery } from "../../server/functions";
+import { ScoredShow } from "../../server/types";
+import { getPremiereAndEndDates } from "../../utils/utils";
 import ImageNotFound from "./image-not-found";
 
 export default function List({ query }: { query: string }) {

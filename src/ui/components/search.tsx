@@ -38,6 +38,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
             <SearchIcon label="Search" />
           </div>
         }
+        
       />
     </div>
   );

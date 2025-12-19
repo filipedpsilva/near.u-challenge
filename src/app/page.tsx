@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Search from "../ui/search";
-import List from "../ui/list";
+import Search from "../ui/components/search";
+import List from "../ui/components/list";
 
 export default async function Home(props: {
   searchParams?: Promise<{

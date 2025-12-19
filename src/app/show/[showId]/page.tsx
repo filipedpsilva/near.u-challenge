@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getEpisodesByShowId, getShowById } from "@/src/server/functions";
 import { Episode, Show } from "@/src/server/types";
 import { getCleanSummary, getPremiereAndEndDates } from "@/src/utils/utils";
-import ImageNotFound from "@/src/ui/image-not-found";
+import ImageNotFound from "@/src/ui/components/image-not-found";
 
 export default async function ShowIdPage(props: PageProps<"/show/[showId]">) {
   const { showId } = await props.params;

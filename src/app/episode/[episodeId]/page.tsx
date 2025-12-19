@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { getEpisodeById } from "@/src/server/functions";
 import { Episode } from "@/src/server/types";
-import ImageNotFound from "@/src/ui/image-not-found";
+import ImageNotFound from "@/src/ui/components/image-not-found";
 import { getCleanSummary } from "@/src/utils/utils";
 
 export default async function EpisodeIdPage(
