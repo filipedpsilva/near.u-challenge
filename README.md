@@ -10,7 +10,7 @@ First, install the dependencies:
 npm i
 ```
 
-If there's an error coming grom @atlaskit/*, please use
+If there's an error coming grom @atlaskit/*, please use:
 
 ```bash
 npm i --legacy-peer-deps
@@ -88,3 +88,5 @@ npm run test
 - Add a breadcrumbs component to show the user each show/episode hierarchy;
 - Add more unit and component tests;
 - Add small animations between states, to make the app feel less clunky;
+- Solve issue with legacy peer dependencies;
+- Solve issue of the @atlaskit client initialization error during the first time test;
