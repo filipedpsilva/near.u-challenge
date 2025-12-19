@@ -18,9 +18,18 @@ export default async function ShowIdPage(props: PageProps<"/show/[showId]">) {
 
   return (
     <div className="flex w-full max-w-3xl flex-col items-center justify-center p-4 bg-gray-600/40 rounded-2xl mb-4 xs:items-start">
-      <h1>{showData.name}</h1>
-      <h5>{getPremiereAndEndDates(showData.premiered, showData.ended)}</h5>
-      <span className="my-4">{getCleanSummary(showData.summary)}</span>
+      <h1 title={showData.name}>{showData.name}</h1>
+      <h5
+        title={`show air date (${getPremiereAndEndDates(
+          showData.premiered,
+          showData.ended
+        )})`}
+      >
+        {getPremiereAndEndDates(showData.premiered, showData.ended)}
+      </h5>
+      <span className="my-4" title="Show summary">
+        {getCleanSummary(showData.summary)}
+      </span>
 
       {showData.image?.original ? (
         <Image
@@ -43,7 +52,7 @@ export default async function ShowIdPage(props: PageProps<"/show/[showId]">) {
                   key={key}
                   className="rounded hover:bg-gray-500/70 cursor-pointer mb-2"
                 >
-                  <Link href={`/episode/${episode.id}`}>
+                  <Link href={`/episode/${episode.id}`} title={episode.name}>
                     {episode.name}
                   </Link>
                 </li>
@@ -52,7 +61,7 @@ export default async function ShowIdPage(props: PageProps<"/show/[showId]">) {
           </ol>
         </div>
       ) : (
-        <h2>No episodes data</h2>
+        <h2 title="No episodes data">No episodes data</h2>
       )}
     </div>
   );

@@ -4,7 +4,10 @@ export default function ImageNotFound(props: {
 }) {
   const { height, width } = props;
   return (
-    <div className={`flex rounded ${width} ${height} bg-black`}>
+    <div
+      className={`flex rounded ${width} ${height} bg-black`}
+      title="Image not found"
+    >
       <span className="flex w-full items-center justify-center">
         Image Not found
       </span>

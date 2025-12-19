@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import ChevronLeftIcon from "@atlaskit/icon/core/chevron-left";
+
+import GoBackButton from "@/src/ui/go-back-button";
 
 export default function ShowIdLayout({
   children,
@@ -24,13 +25,7 @@ export default function ShowIdLayout({
         />
       </div>
       {children}
-      <button
-        className="flex mt-2 bg-gray-500 w-40 h-auto hover:bg-gray-400/70 cursor-pointer rounded mb-4 items-center justify-center"
-        onClick={() => router.back()}
-      >
-        <ChevronLeftIcon label="Go back" />
-        Go back
-      </button>
+      <GoBackButton onClick={() => router.back()} />
     </div>
   );
 }

@@ -14,12 +14,18 @@ export default async function EpisodeIdPage(
 
   return (
     <div className="flex w-full max-w-3xl flex-col items-center justify-center p-4 bg-gray-600/40 rounded-2xl xs:items-start">
-      <h2>{episodeData.name}</h2>
-      <span>Aired {episodeData.airdate}</span>
-      <span>
+      <h2 title={episodeData.name}>{episodeData.name}</h2>
+      <span title={`Aired ${episodeData.airdate}`}>
+        Aired {episodeData.airdate}
+      </span>
+      <span
+        title={`Season ${episodeData.season} Episode ${episodeData.number}`}
+      >
         Season {episodeData.season} Episode {episodeData.number}
       </span>
-      <span>{episodeData.runtime} minutes of runtime</span>
+      <span title={`${episodeData.runtime} minutes of runtime`}>
+        {episodeData.runtime} minutes of runtime
+      </span>
 
       {episodeData.image?.original ? (
         <Image
@@ -32,11 +38,13 @@ export default async function EpisodeIdPage(
         />
       ) : (
         <>
-        <ImageNotFound height={"h-100"} width={"w-100"} />
+          <ImageNotFound height={"h-100"} width={"w-100"} />
         </>
       )}
 
-      <span className="my-4">{getCleanSummary(episodeData.summary)}</span>
+      <span className="my-4" title="episode summary">
+        {getCleanSummary(episodeData.summary)}
+      </span>
     </div>
   );
 }

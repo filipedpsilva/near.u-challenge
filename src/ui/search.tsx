@@ -23,14 +23,12 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
   return (
     <div className="flex flex-row w-full items-center justify-center flex-1 shrink-0">
-      <label htmlFor="search" className="sr-only">
-        Search
-      </label>
       <Textfield
         name="show-search"
         id="show-search-textfield"
         alt="Search for shows textfield"
         placeholder={placeholder}
+        title="Search for shows textfield"
         onChange={(e) => {
           handleSearch((e.target as HTMLInputElement).value);
         }}

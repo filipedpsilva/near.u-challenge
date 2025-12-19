@@ -11,7 +11,7 @@ export default async function Home(props: {
   const query = searchParams?.query || "";
 
   return (
-    <main className="flex w-full max-w-3xl flex-col items-center align-top justify-between p-16 sm:items-start">
+    <div className="flex w-full max-w-3xl flex-col items-center align-top justify-between p-16 sm:items-start">
       <div className="flex flex-col w-full items-center justify-center">
         <Image
           src={"/logo-new.png"}
@@ -21,11 +21,13 @@ export default async function Home(props: {
           priority
           className="mb-2"
         />
-        <h1 className="flex max-w-3xl justify-center">TV show database</h1>
+        <h1 title="TV show database" className="flex max-w-3xl justify-center">
+          TV show database
+        </h1>
         <Search placeholder="Search for shows..." />
       </div>
 
       <List query={query} />
-    </main>
+    </div>
   );
 }
