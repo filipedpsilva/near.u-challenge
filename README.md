@@ -1,36 +1,90 @@
+# Near.U Challenge - Filipe Silva
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm i
+```
+
+If there's an error coming grom @atlaskit/*, please use
+
+```bash
+npm i --legacy-peer-deps
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Explanations and notes
 
-To learn more about Next.js, take a look at the following resources:
+The `src` core structure is divided between the `__tests__`, `/app`, `/server`, `/ui`, and `/utils` folders.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+── src
+    ├── __tests__
+    │   ├── component
+    │   │   ├── image-not-found.test.tsx
+    │   │   └── search.test.tsx
+    │   └── unit
+    │       └── utils.ts
+    ├── app
+    │   ├── episode
+    │   │   └── [episodeId]
+    │   │        ├── layout.tsx
+    │   │        └── page.tsx
+    │   ├── show
+    │   │   └── [showId]
+    │   │        ├── layout.tsx
+    │   │        └── page.tsx
+    │   ├── favicon.ico
+    │   ├── globals.css
+    │   ├── layout.tsx
+    │   └── page.tsx
+    ├── server
+    │   ├── functions.ts
+    │   └── types.ts
+    ├── ui
+    │   └── components
+    │       ├── go-back-button.tsx
+    │       ├── image-not-found.tsx
+    │       ├── list.tsx
+    │       └── search.tsx
+    └── utils
+        └── utils.ts
+```
+The `__tests__` folder is made up of two inner folders: `component` and `unit`, for component tests and unit tests, respectively.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The `/app` folder consists of the actual app content (i.e.: `globals.css`, `layout.tsx` and `page.tsx`) and main routes (i.e.: `/episode` and `/show`). Each route, has its dynamic route, consisting of an individual id of each route (i.e.: `episodeId` and `showId`). This folder only conbtains the routes, making it simpler to grow, without any confusion of what is routable or not.
 
-## Deploy on Vercel
+The `/server` folder consists of server functions/actions that can be used fetch and mutate data.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The `/ui` folder has every ui component for specific needs.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The `/utils` folder, as the name suggests, has every utilitary function needed to format or get simple information.
+
+This project also uses [atlassian.design](https://atlassian.design/) for it's icons and regular components.
+
+## Getting Tested
+
+To test everything, use:
+
+```bash
+npm run test
+```
+
+## List of TODO's
+- Add skeletons to the base components, along with Loading states;
+- Add a breadcrumbs component to show the user each show/episode hierarchy;
+- Add more unit and component tests;
+- Add small animations between states, to make the app feel less clunky;

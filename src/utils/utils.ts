@@ -33,7 +33,7 @@ export function getPremiereAndEndDates(premiered: string, ended: string): string
 
     const premierYear = getYear(premiered);
 
-    if (!ended) {
+    if (!ended || ended < premiered) {
         return `${premierYear} - Currently on air`;
     }
 
