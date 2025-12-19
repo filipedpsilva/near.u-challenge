@@ -26,9 +26,13 @@ body {
 }
 
 h1 {
-  @apply text-2xl;
+  @apply text-4xl font-extrabold;
+}
+
+h2 {
+  @apply text-2xl font-extrabold;
 }
 
 h5 {
-  @apply text-xs;
+  @apply text-xs font-extrabold;
 }
